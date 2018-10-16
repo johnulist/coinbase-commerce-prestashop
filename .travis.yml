@@ -35,18 +35,13 @@ env:
         - php: 7.2       
 
     fast_finish: true        
-    
+
 before_script:
-    #   Move Module to Tmp Folder
-    - bash tools/move_module.sh
-    #   Get Prestashop
-    - bash $MODULE_SCRIPTS_DIR/get_prestashop.sh
-    #   Setup WebServer (Apache & PHP-Fpm)
-    - bash $MODULE_SCRIPTS_DIR/install_webserver.sh
-    #   Install Prestashop (Composer & More)
-    - bash $MODULE_SCRIPTS_DIR/start_prestashop.sh
-    #   Install Module
-    - bash $MODULE_SCRIPTS_DIR/install_module.sh coinbase
+    - ./tools/move_module.sh
+    - $MODULE_SCRIPTS_DIR/get_prestashop.sh
+    - $MODULE_SCRIPTS_DIR/install_webserver.sh
+    - $MODULE_SCRIPTS_DIR/start_prestashop.sh
+    - $MODULE_SCRIPTS_DIR/install_module.sh coinbase
     
 script: 
     - cd $MODULE_DIR

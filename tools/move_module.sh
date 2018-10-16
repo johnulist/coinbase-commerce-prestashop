@@ -1,8 +1,9 @@
+#!/bin/bash
 
 echo Move Module to TMP Folder
 
 if [ -z "$TRAVIS_BUILD_DIR" ] ; then
-    echo "TRAVIS_BUILD_DIR not defined" && exit 1
+    echo "TRAVIS_BUILD_DIR is not defined: exit." && exit 1
 fi
 
 # Move Module Contents to Tmp Folder
